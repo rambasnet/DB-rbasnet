@@ -4,10 +4,10 @@ __author__ = "Ram Basnet"
 
 import os
 import time
-from python import db
+from utility import db
 
 
-def setup_database(db_file):
+def setup_database(db_file: str) -> None:
     """TODO: Write all your code to setup database.
     """
     print('seting up database...')
@@ -19,7 +19,7 @@ def setup_database(db_file):
     time.sleep(2)
 
 
-def show_menu():
+def show_menu() -> int:
     """Displays menu."""
     text = """
     A+ Grade Book
@@ -34,14 +34,14 @@ def show_menu():
     option = input('Enter an option: [1-3]: ')
     while True:
         if option.isdecimal():
-            option = int(option)
-            if 1 <= option <= 3:
-                return int(option)
+            opt = int(option)
+            if 1 <= opt <= 3:
+                return opt
         os.system('clear')
         option = input("Enter a valid option: ")
 
 
-def main():
+def main() -> None:
     """Main function.
     """
     db_file = "gradebook.sqlite"

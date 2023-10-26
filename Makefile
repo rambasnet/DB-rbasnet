@@ -26,7 +26,8 @@ clean:
 	rm -rf .pytest_cache
 	rm -rf .mypy_cache
 	rm -rf .hypothesis
-
+	rm -rf __pycache__
+	rm -rf .pytest_cache
 
 .PHONY: push
 push: run-test clean
